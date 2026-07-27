@@ -102,11 +102,11 @@
       #secret-doc-2 {
         /* Убираем margin-left, чтобы не было сдвига вправо */
         margin-top: 10px;
-        margin-left: 20px;
+        margin-right: 20px;
         z-index: 4; /* Чуть ниже первого листа */
         /* Добавляем легкое смещение только по вертикали и совсем чуть-чуть по горизонтали, 
            чтобы было видно, что это другой лист, но выглядело ровно */
-        transform: translateX(10px) translateY(10px); 
+        transform: translateX(-30px) translateY(10px); 
       }
       .doc-sheet.visible {
         opacity: 1;
@@ -131,7 +131,7 @@
   </head>
   <body>
     <div class="container">
-      <h2>Секретный документ SCP-3125</h2>
+      <h2>Секретный документ Архива</h2>
       <div class="display" id="display">0</div>
       <div class="buttons">
         <button class="btn" onclick="append('7')">7</button>
