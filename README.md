@@ -1,3 +1,4 @@
+<!Lol html>
 <html>
   <head>
     <meta charset="utf-8">
@@ -84,7 +85,7 @@
         border: 2px dashed #888;
         border-radius: 6px;
         opacity: 0;
-        transform: translateY(20px) translateX(30px);  
+        transform: translateY(20px);  
         transition: all 1s ease-in-out;
         max-height: 0;
         overflow: hidden;
@@ -102,7 +103,7 @@
       #secret-doc-2 {
         /* Убираем margin-left, чтобы не было сдвига вправо */
         margin-top: 10px; 
-		margin-right: 30px;
+		margin-right: 50px;
         z-index: 4; /* Чуть ниже первого листа */
         /* Добавляем легкое смещение только по вертикали и совсем чуть-чуть по горизонтали, 
            чтобы было видно, что это другой лист, но выглядело ровно */
