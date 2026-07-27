@@ -106,7 +106,7 @@
         z-index: 4; /* Чуть ниже первого листа */
         /* Добавляем легкое смещение только по вертикали и совсем чуть-чуть по горизонтали, 
            чтобы было видно, что это другой лист, но выглядело ровно */
-        transform: translateX(-30px) translateY(10px); 
+        transform: translateX(-15px) translateY(10px); 
       }
       .doc-sheet.visible {
         opacity: 1;
