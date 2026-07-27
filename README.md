@@ -84,8 +84,7 @@
         border: 2px dashed #888;
         border-radius: 6px;
         opacity: 0;
-        transform: translateY(20px);
-		transform: translateX(10px);  
+        transform: translateY(20px) translateX(30px);  
         transition: all 1s ease-in-out;
         max-height: 0;
         overflow: hidden;
