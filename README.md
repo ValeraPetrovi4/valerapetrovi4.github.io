@@ -77,7 +77,7 @@
       .btn.ok { background: #2e8b57; }
       .doc-sheet {
         margin-top: 40px;
-        margin-left: 22px;
+        margin-left: 40px;
         width: 600px; 
         max-width: 90%;
         background: #fff;
@@ -85,7 +85,7 @@
         border: 2px dashed #888;
         border-radius: 6px;
         opacity: 0;
-        transform: translateY(20px) translateX(22px);  
+        transform: translateY(20px) translateX(20px);  
         transition: all 1s ease-in-out;
         max-height: 0;
         overflow: hidden;
@@ -103,7 +103,7 @@
       #secret-doc-2 {
         /* Убираем margin-left, чтобы не было сдвига вправо */
         margin-top: 10px;
-        margin-left: 10px;
+        margin-left: 20px;
         z-index: 4; /* Чуть ниже первого листа */
         /* Добавляем легкое смещение только по вертикали и совсем чуть-чуть по горизонтали, 
            чтобы было видно, что это другой лист, но выглядело ровно */
@@ -132,7 +132,7 @@
   </head>
   <body>
     <div class="container">
-      <h2>  Секретный документ Архива42</h2>
+      <h2>  Секретный документ Архива</h2>
       <div class="display" id="display">0</div>
       <div class="buttons">
         <button class="btn" onclick="append('7')">7</button>
