@@ -84,7 +84,7 @@
         border: 2px dashed #888;
         border-radius: 6px;
         opacity: 0;
-        transform: translateY(20px);  
+        transform: translateY(20px) translateX(22px);  
         transition: all 1s ease-in-out;
         max-height: 0;
         overflow: hidden;
@@ -106,7 +106,7 @@
         z-index: 4; /* Чуть ниже первого листа */
         /* Добавляем легкое смещение только по вертикали и совсем чуть-чуть по горизонтали, 
            чтобы было видно, что это другой лист, но выглядело ровно */
-        transform: translateX(-5px) translateY(10px); 
+        transform: translateX(10px) translateY(10px); 
       }
       .doc-sheet.visible {
         opacity: 1;
@@ -131,7 +131,7 @@
   </head>
   <body>
     <div class="container">
-      <h2>  Секретный документ Архива Gneg</h2>
+      <h2>  Секретный документ Архива</h2>
       <div class="display" id="display">0</div>
       <div class="buttons">
         <button class="btn" onclick="append('7')">7</button>
