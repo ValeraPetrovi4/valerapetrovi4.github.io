@@ -77,7 +77,7 @@
       .btn.ok { background: #2e8b57; }
       .doc-sheet {
         margin-top: 40px;
-        margin-left: 40px;
+        margin-left: 35px;
         width: 600px; 
         max-width: 90%;
         background: #fff;
@@ -132,7 +132,7 @@
   </head>
   <body>
     <div class="container">
-      <h2>  Секретный документ Архива</h2>
+      <h2>  Секретный документ Архива42</h2>
       <div class="display" id="display">0</div>
       <div class="buttons">
         <button class="btn" onclick="append('7')">7</button>
