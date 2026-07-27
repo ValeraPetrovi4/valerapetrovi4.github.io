@@ -1,7 +1,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Пакет документов SCP-3125</title>
+    <title>Архив Администрации</title>
     <style>
       body {
         font-family: 'Courier New', Courier, monospace;
@@ -21,7 +21,7 @@
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 0 20px rgba(0,0,0,0.8);
-        max-width: 400px;
+        max-width: 600px;
         width: 100%;
         text-align: center;
         z-index: 10;
@@ -75,8 +75,6 @@
       }
       .btn.clear { background: #a00; }
       .btn.ok { background: #2e8b57; }
-      
-      /* Общий стиль для документов */
       .doc-sheet {
         margin-top: 40px;
         width: 600px; 
@@ -87,6 +85,7 @@
         border-radius: 6px;
         opacity: 0;
         transform: translateY(20px);
+		transform: translateX(10px);  
         transition: all 1s ease-in-out;
         max-height: 0;
         overflow: hidden;
@@ -100,32 +99,28 @@
         position: relative;
         z-index: 5;
       }
-
       /* ИСПРАВЛЕНИЕ: Второй лист теперь лежит ПОД первым, а не смещен вправо */
       #secret-doc-2 {
         /* Убираем margin-left, чтобы не было сдвига вправо */
         margin-top: 10px; 
-	margin-right: 20px;
+		margin-right: 20px;
         z-index: 4; /* Чуть ниже первого листа */
         /* Добавляем легкое смещение только по вертикали и совсем чуть-чуть по горизонтали, 
            чтобы было видно, что это другой лист, но выглядело ровно */
         transform: translateX(10px) translateY(10px); 
       }
-
       .doc-sheet.visible {
         opacity: 1;
         transform: none; /* Сбрасываем начальное смещение при появлении */
         max-height: 80vh;
         padding-bottom: 50px;
       }
-
       .doc-sheet h3 {
         color: #d9534f;
         border-bottom: 2px solid #ccc;
         padding-bottom: 10px;
         margin-top: 0;
       }
-
       #message {
         margin-top: 10px;
         font-weight: bold;
@@ -155,7 +150,6 @@
       </div>
       <p id="message"></p>
     </div>
-
     <!-- Первый лист -->
     <div id="secret-doc" class="doc-sheet">
       <h3>ДОСТУП РАЗРЕШЁН — УРОВЕНЬ ДОПУСКА: ОСОБЫЙ</h3>
@@ -167,7 +161,6 @@
       <p><strong>Локация:</strong> Зона 41, Камера содержания инфоугроз 3125. Это единственное известное место в мире, где удалось добиться нейтрализации влияния объекта.</p>
       <p><strong>Конструкция камеры:</strong> Представляет собой кубоидную комнату размером 10 × 15 × 3 м. Стены облицованы свинцом, установлена комплексная звуко- и телепатическая изоляция.</p>
     </div>
-
     <!-- Второй лист (теперь ровно под первым) -->
     <div id="secret-doc-2" class="doc-sheet">
       <h3>ПРИЛОЖЕНИЕ №1: ПРОТОКОЛ ДОСТУПА</h3>
@@ -182,19 +175,16 @@
         Документ классифицирован. Не подлежит распространению. Любое копирование или передача третьим лицам карается по законам Фонда.
       </p>
     </div>
-
     <script>
       const display = document.getElementById('display');
       const message = document.getElementById('message');
       const doc1 = document.getElementById('secret-doc');
       const doc2 = document.getElementById('secret-doc-2');
       const buttons = document.querySelectorAll('.btn');
-
       function append(value) {
         if (display.innerText === '0') display.innerText = value;
         else display.innerText += value;
       }
-
       function clearDisplay() {
         // Сброс возможен только если документы еще не открыты
         if (!doc1.classList.contains('visible')) {
@@ -203,7 +193,6 @@
             message.className = '';
         }
       }
-
       function blockInput() {
         display.style.opacity = '0.5';
         display.style.pointerEvents = 'none';
@@ -211,28 +200,23 @@
             btn.classList.add('disabled');
         });
       }
-
       function checkCode() {
         const code = display.innerText;
         if (code === '5631') {
           message.innerText = 'Доступ разрешён. Документы загружаются…';
           message.className = 'success';
-          
           // Блокируем ввод сразу
           blockInput();
-
           // Показываем первый лист
           setTimeout(() => {
             doc1.classList.add('visible');
             doc1.scrollTop = 0;
           }, 800);
-
           // Показываем второй лист с задержкой (эффект стопки)
           setTimeout(() => {
             doc2.classList.add('visible');
             doc2.scrollTop = 0;
           }, 1200);
-
         } else {
           message.innerText = 'Неверный код. Доступ запрещён.';
           message.className = 'error';
