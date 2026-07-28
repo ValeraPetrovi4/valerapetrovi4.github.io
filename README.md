@@ -103,7 +103,7 @@
       #secret-doc-2 {
         /* Убираем margin-left, чтобы не было сдвига вправо */
         margin-top: 10px;
-        margin-left: 20px;
+        margin-left: 23px;
         z-index: 4; /* Чуть ниже первого листа */
         /* Добавляем легкое смещение только по вертикали и совсем чуть-чуть по горизонтали, 
            чтобы было видно, что это другой лист, но выглядело ровно */
@@ -132,7 +132,7 @@
   </head>
   <body>
     <div class="container">
-      <h2>  Секретный документ Архива42</h2>
+      <h2>   Секретный документ Архива</h2>
       <div class="display" id="display">0</div>
       <div class="buttons">
         <button class="btn" onclick="append('7')">7</button>
