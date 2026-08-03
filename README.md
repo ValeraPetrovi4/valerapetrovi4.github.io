@@ -180,6 +180,9 @@
       const doc1 = document.getElementById('secret-doc');
       const doc2 = document.getElementById('secret-doc-2');
       const buttons = document.querySelectorAll('.btn');
+      const audio = new Audio('ambient.mp3');
+      audio.loop = true;
+      audio.volume = 0.4;
       function append(value) {
         if (display.innerText === '0') display.innerText = value;
         else display.innerText += value;
@@ -204,6 +207,9 @@
         if (code === '5631') {
           message.innerText = 'Доступ разрешён. Документы загружаются…';
           message.className = 'success';
+          audio.play().catch(e => {
+            console.log('Автоплей заблокирован браузером или файл не найден:', e);
+          });
           // Блокируем ввод сразу
           blockInput();
           // Показываем первый лист
