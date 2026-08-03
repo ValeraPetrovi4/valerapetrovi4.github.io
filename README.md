@@ -1,4 +1,4 @@
-<hmtl>
+
   <head>
     <meta charset="utf-8">
     <title>Архив Администрации</title>
@@ -254,4 +254,3 @@
       }
     </script>
   </body>
-</html>
