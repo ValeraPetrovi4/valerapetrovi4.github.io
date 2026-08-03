@@ -1,3 +1,4 @@
+<hmtl>
   <head>
     <meta charset="utf-8">
     <title>Архив Администрации</title>
@@ -163,6 +164,8 @@
     </div>
     <!-- Второй лист (теперь ровно под первым) -->
     <div id="secret-doc-2" class="doc-sheet">
+    </div> 
+    <div id="secret-doc-3" class="doc-sheet">
       <p></p>
       <p></p>
       <hr>
@@ -179,6 +182,7 @@
       const message = document.getElementById('message');
       const doc1 = document.getElementById('secret-doc');
       const doc2 = document.getElementById('secret-doc-2');
+      const doc3 = document.getElementById('secret-doc-3');
       const buttons = document.querySelectorAll('.btn');
       const audio = new Audio('ambient.mp3');
       audio.loop = false;
@@ -235,6 +239,10 @@
             doc2.classList.add('visible');
             doc2.scrollTop = 0;
           }, 1200);
+          setTimeout(() => {
+            doc3.classList.add('visible');
+            doc3.scrollTop = 0;
+          }, 1600);
         } else {
           message.innerText = 'Неверный код. Доступ запрещён.';
           message.className = 'error';
@@ -246,3 +254,4 @@
       }
     </script>
   </body>
+</html>
