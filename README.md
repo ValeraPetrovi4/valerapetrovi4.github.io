@@ -15,18 +15,26 @@
         margin: 0;
         padding: 20px;
       }
-      #bg-image {
+#bg-wrapper {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;          /* чтобы картинка заполняла экран без искажений */
-  opacity: 0.2;               /* полупрозрачность: 0 = невидимо, 1 = полностью видно */
-  z-index: 1;                 /* под всем контентом */
-  pointer-events: none;       /* чтобы не мешала кликам */
-  transform-origin: center;   /* вращение вокруг центра */
-  transition: transform 5s cubic-bezier(0.25, 1, 0.5, 1); /* плавное торможение */
+  overflow: hidden;             /* скрывает всё, что вылезает за экран */
+  z-index: 1;
+}
+#bg-image {
+  width: 120%;                  /* делаем картинку чуть больше экрана */
+  height: 120%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* центрируем */
+  object-fit: cover;            /* теперь обрезка не видна из‑за overflow у родителя */
+  opacity: 0.3;
+  pointer-events: none;
+  transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);
 }
 /* Класс, который добавим через JS после ввода пароля */
       .container {
@@ -273,5 +281,7 @@ setTimeout(() => {
         }
       }
     </script>
-    <img id="bg-image" src="background.png" alt="">
+    <div id="bg-wrapper">
+  <img id="bg-image" src="background.png" alt="">
+    </div>
   </body>
