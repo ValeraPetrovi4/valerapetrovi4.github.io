@@ -252,7 +252,9 @@
           blockInput();
           playSegment();
           const bgImg = document.getElementById('bg-image');
-bgImg.style.transform = 'rotate(360deg)';
+#bg-wrapper.rotated {
+  transform: rotate(360deg);
+}
 bgImg.classList.remove('rotated');
 setTimeout(() => {
   bgImg.classList.add('rotated'); // CSS сделает 360deg с плавным переходом
