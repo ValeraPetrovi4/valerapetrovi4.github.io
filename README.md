@@ -36,6 +36,9 @@
   pointer-events: none;
   transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);
 }
+      #bg-wrapper.rotated {
+  transform: rotate(360deg);
+}
 /* Класс, который добавим через JS после ввода пароля */
       .container {
         background: #2b2b2b;
@@ -252,13 +255,12 @@
           blockInput();
           playSegment();
           const bgImg = document.getElementById('bg-image');
-#bg-wrapper.rotated {
-  transform: rotate(360deg);
-}
-bgImg.classList.remove('rotated');
+const bgWrapper = document.getElementById('bg-wrapper');
+bgWrapper.style.transform = 'rotate(360deg)';
+bgWrapper.classList.remove('rotated');
 setTimeout(() => {
-  bgImg.classList.add('rotated'); // CSS сделает 360deg с плавным переходом
-          }, 600);
+  bgWrapper.classList.add('rotated');
+}, 600);
           // Показываем первый лист
           setTimeout(() => {
             doc1.classList.add('visible');
