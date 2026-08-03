@@ -19,14 +19,14 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;          /* чтобы картинка заполняла экран без искажений */
   opacity: 0.2;               /* полупрозрачность: 0 = невидимо, 1 = полностью видно */
   z-index: 1;                 /* под всем контентом */
   pointer-events: none;       /* чтобы не мешала кликам */
   transform-origin: center;   /* вращение вокруг центра */
-  transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1); /* плавное торможение */
+  transition: transform 5s cubic-bezier(0.25, 1, 0.5, 1); /* плавное торможение */
 }
 /* Класс, который добавим через JS после ввода пароля */
       .container {
