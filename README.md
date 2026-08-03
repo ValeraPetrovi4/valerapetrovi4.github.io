@@ -1,4 +1,3 @@
-<img width="245" height="329" alt="image" src="https://github.com/user-attachments/assets/2cbde1af-eeb9-4e4d-bdff-056002f21df2" /><html>
   <head>
     <meta charset="utf-8">
     <title>Архив Администрации</title>
