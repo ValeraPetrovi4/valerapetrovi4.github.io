@@ -15,6 +15,23 @@
         margin: 0;
         padding: 20px;
       }
+      #bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* чтобы картинка заполняла экран без искажений */
+  opacity: 0.3;               /* полупрозрачность: 0 = невидимо, 1 = полностью видно */
+  z-index: 1;                 /* под всем контентом */
+  pointer-events: none;       /* чтобы не мешала кликам */
+  transform-origin: center;   /* вращение вокруг центра */
+  transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1); /* плавное торможение */
+}
+/* Класс, который добавим через JS после ввода пароля */
+#bg-image.rotated {
+  transform: rotate(360deg);
+}
       .container {
         background: #2b2b2b;
         border: 2px solid #888;
@@ -229,6 +246,12 @@
           // Блокируем ввод сразу
           blockInput();
           playSegment();
+          const bgImg = document.getElementById('bg-image');
+bgImg.style.transform = 'rotate(0deg)';
+bgImg.classList.remove('rotated');
+setTimeout(() => {
+  bgImg.classList.add('rotated'); // CSS сделает 360deg с плавным переходом
+          }, 600);
           // Показываем первый лист
           setTimeout(() => {
             doc1.classList.add('visible');
@@ -253,4 +276,5 @@
         }
       }
     </script>
+    <img id="bg-image" src="background.png" alt="">
   </body>
