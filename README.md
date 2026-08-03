@@ -31,7 +31,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%); /* центрируем */
-  object-fit: cover;            /* теперь обрезка не видна из‑за overflow у родителя */
+  object-fit: contain;            /* теперь обрезка не видна из‑за overflow у родителя */
   opacity: 0.3;
   pointer-events: none;
   transition: transform 2s cubic-bezier(0.25, 1, 0.5, 1);
