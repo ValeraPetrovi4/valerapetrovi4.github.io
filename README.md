@@ -181,8 +181,11 @@
       const doc2 = document.getElementById('secret-doc-2');
       const buttons = document.querySelectorAll('.btn');
       const audio = new Audio('ambient.mp3');
-      audio.loop = true;
-      audio.volume = 0.4;
+      audio.loop = false;
+      audio.volume = 0.2;
+      let currentSegment = 0; // 0 — первый проход (0–75), 1 — второй и далее (5–75)
+      const startTimes = [0, 5];
+      const endTime = 150;
       function append(value) {
         if (display.innerText === '0') display.innerText = value;
         else display.innerText += value;
@@ -202,16 +205,26 @@
             btn.classList.add('disabled');
         });
       }
+      function playSegment() {
+        const start = startTimes[currentSegment];
+        audio.currentTime = start;
+        audio.play().catch(e => console.log('Play error:', e));
+        setTimeout(() => {
+          audio.pause();
+          audio.currentTime = 0;
+    // Переключаем сегмент: после первого (0) идём на второй (5), дальше всегда 5
+        currentSegment = currentSegment === 0 ? 1 : 1;
+        playSegment(); // запускаем следующий проход
+    }, (endTime - start) * 1000);
+   }
       function checkCode() {
         const code = display.innerText;
         if (code === '5631') {
           message.innerText = 'Доступ разрешён. Документы загружаются…';
           message.className = 'success';
-          audio.play().catch(e => {
-            console.log('Автоплей заблокирован браузером или файл не найден:', e);
-          });
           // Блокируем ввод сразу
           blockInput();
+          playSegment();
           // Показываем первый лист
           setTimeout(() => {
             doc1.classList.add('visible');
